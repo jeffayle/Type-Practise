@@ -28,4 +28,5 @@ inputFile = open(sys.argv[1])
 
 #Main loop
 for line in inputFile:
+    line = line.strip()
     cpm, wpm, inputLine = doLine(line)

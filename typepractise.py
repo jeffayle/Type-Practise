@@ -17,6 +17,10 @@ def doLine(line):
 
     return cpm, wpm, inputLine
 
+def lineOutput(cpm, wpm, inputLine, line):
+    print "%3d CPM / %3d WPM."%(cpm, wpm)
+    print "" #Extra newline
+
 #Startup stuff
 if len(sys.argv) < 2:
     sys.stderr.write("Error: Please specify a file to practise with on the"
@@ -30,3 +34,5 @@ inputFile = open(sys.argv[1])
 for line in inputFile:
     line = line.strip()
     cpm, wpm, inputLine = doLine(line)
+
+    lineOutput(cpm, wpm, inputLine, line)

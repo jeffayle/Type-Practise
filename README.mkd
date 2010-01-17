@@ -1,0 +1,16 @@
+# Type Practise
+Type practise is a simple program for improving typing speed by copying
+lines. The program is started by running `typepractise inputFile`, where
+`inputFile` is the text file you want to use to practise.
+
+Once started, you will be shown the first line, which you must type out,
+when you reach the end of the line you will be given your speed (in
+characters/minute and words/minute) and how many mistakes you made.
+
+## Installation
+To install for all users run `make install`, to install for just the current
+user run `make install_user`. The first will require super user privileges
+and installs in `/usr/bin`, the second will install in `~/bin`.
+
+Alternatively, you can copy `typepractise.py` somewhere that your shell can
+find it.

@@ -18,9 +18,22 @@ def doLine(line):
     return cpm, wpm, inputLine
 
 def lineOutput(cpm, wpm, inputLine, line):
-    print "%3d CPM / %3d WPM."%(cpm, wpm) , 
+    #Figure out how many mistakes were make
+    mistakes = 0
+    for a, b in zip(*normalizeLengths(line,inputLine)):
+        if a != b: mistakes += 1
+
+    print "%3d CPM / %3d WPM. %d mistakes"%(cpm, wpm, mistakes) , 
     raw_input() #Wait for user to review stats
     print "" #Extra newline
+
+def normalizeLengths(left, right):
+    "Normalizes the length of two strings by appending nulls to either"
+    if len(left) < len(right):
+        left += "\0"*(len(right)-len(left))
+    elif len(right) < len(left):
+        right += "\0"*(len(left)-len(right))
+    return left, right
 
 #Startup stuff
 if len(sys.argv) < 2:

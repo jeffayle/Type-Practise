@@ -18,7 +18,8 @@ def doLine(line):
     return cpm, wpm, inputLine
 
 def lineOutput(cpm, wpm, inputLine, line):
-    print "%3d CPM / %3d WPM."%(cpm, wpm)
+    print "%3d CPM / %3d WPM."%(cpm, wpm) , 
+    raw_input() #Wait for user to review stats
     print "" #Extra newline
 
 #Startup stuff

@@ -1,11 +1,21 @@
 #!/usr/bin/env python
-import time
+from time import time
 import sys
 
 #Functions
 def doLine(line):
     "Times the typing speed of a line. Returns (CPM, WPM, line entered)"
-    pass
+    print line
+    startTime = time()
+    inputLine = raw_input()
+    endTime = time()
+
+    #time it took to enter line, in minutes
+    dtime = (endTime - startTime)/60
+    cpm = len(line) / dtime
+    wpm = len(line.split(" ")) / dtime
+
+    return cpm, wpm, inputLine
 
 #Startup stuff
 if len(sys.argv) < 2:
